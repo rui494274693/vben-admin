@@ -11,10 +11,9 @@ import {
 } from './components';
 import { AppDarkModeToggle } from '/@/components/Application';
 
-import {
-  // MenuTypeEnum,
-  TriggerEnum,
-} from '/@/enums/menuEnum';
+import // MenuTypeEnum,
+// TriggerEnum,
+'/@/enums/menuEnum';
 
 import { useRootSetting } from '/@/hooks/setting/useRootSetting';
 import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
@@ -29,7 +28,7 @@ import {
   HandlerEnum,
   // contentModeOptions,
   // topMenuAlignOptions,
-  getMenuTriggerOptions,
+  // getMenuTriggerOptions,
   // routerTransitionOptions,
   // menuTypeList,
   // mixSidebarTriggerOptions,
@@ -156,13 +155,13 @@ export default defineComponent({
      * @description: 界面功能
      */
     function renderFeatures() {
-      let triggerDef = unref(getTrigger);
+      // const triggerDef = unref(getTrigger);
 
-      const triggerOptions = getMenuTriggerOptions(unref(getSplit));
-      const some = triggerOptions.some((item) => item.value === triggerDef);
-      if (!some) {
-        triggerDef = TriggerEnum.HEADER;
-      }
+      // const triggerOptions = getMenuTriggerOptions(unref(getSplit));
+      // const some = triggerOptions.some((item) => item.value === triggerDef);
+      // if (!some) {
+      //   triggerDef = TriggerEnum.HEADER;
+      // }
       return (
         <>
           <SwitchItem

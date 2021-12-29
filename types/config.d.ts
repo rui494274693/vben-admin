@@ -1,14 +1,14 @@
 import {
   MenuTypeEnum,
   MenuModeEnum,
-  TriggerEnum,
+  // TriggerEnum,
   //  MixSidebarTriggerEnum
 } from '/@/enums/menuEnum';
 import {
-  ContentEnum,
+  // ContentEnum,
   PermissionModeEnum,
   ThemeEnum,
-  RouterTransitionEnum,
+  // RouterTransitionEnum,
   SettingButtonPositionEnum,
   SessionTimeoutProcessingEnum,
 } from '/@/enums/appEnum';
@@ -29,7 +29,7 @@ export interface MenuSetting {
   type: MenuTypeEnum;
   theme: ThemeEnum;
   // topMenuAlign: 'start' | 'center' | 'end';
-  trigger: TriggerEnum;
+  // trigger: TriggerEnum;
   // accordion: boolean;
   // closeMixSidebarOnChange: boolean;
   collapsedShowTitle: boolean;

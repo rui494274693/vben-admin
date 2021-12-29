@@ -12,16 +12,13 @@
   >
     <Sider />
   </Drawer>
-  <!-- MixSider 菜单-折叠名称模式 -->
-  <MixSider v-else-if="getIsMixSidebar" />
-  <!-- MixSider 菜单-正常模式 -->
+  <!-- Sider 菜单-正常模式 -->
   <Sider v-else />
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
 
   import Sider from './LayoutSider.vue'; // 菜单
-  import MixSider from './MixSider.vue'; //折叠模式
   import { Drawer } from 'ant-design-vue'; //抽屉
 
   import { useAppInject } from '/@/hooks/web/useAppInject';
@@ -29,7 +26,7 @@
   import { useDesign } from '/@/hooks/web/useDesign';
   export default defineComponent({
     name: 'SiderWrapper',
-    components: { Sider, Drawer, MixSider },
+    components: { Sider, Drawer },
     setup() {
       const { prefixCls } = useDesign('layout-sider-wrapper'); //布局样式
       const { getIsMobile } = useAppInject(); //Mobile模式布局 小屏模式

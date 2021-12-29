@@ -1,7 +1,5 @@
 <template>
   <Layout :class="prefixCls">
-    <!-- <LayoutFeatures /> -->
-    <!-- <LayoutHeader fixed v-if="getShowFullHeaderRef" /> -->
     <Layout :class="[layoutClass]">
       <!-- LayoutSideBar 左侧菜单栏-->
       <LayoutSideBar v-if="getShowSidebar || getIsMobile" />
@@ -10,7 +8,6 @@
         <LayoutMultipleHeader />
         <!-- Layout 右侧主体main-->
         <LayoutContent />
-        <!-- <LayoutFooter /> -->
       </Layout>
     </Layout>
   </Layout>
@@ -19,8 +16,6 @@
 <script lang="ts">
   import { defineComponent, computed, unref } from 'vue';
   import { Layout } from 'ant-design-vue';
-  // import { createAsyncComponent } from '/@/utils/factory/createAsyncComponent'; //异步注册组件
-  // import LayoutHeader from './header/index.vue';
   import LayoutContent from './content/index.vue'; //主体main 子路由显示的connent
   import LayoutSideBar from './sider/index.vue'; //左侧菜单栏
   import LayoutMultipleHeader from './header/MultipleHeader.vue'; //顶部和已打开tab栏
@@ -34,9 +29,6 @@
   export default defineComponent({
     name: 'DefaultLayout',
     components: {
-      // LayoutFeatures: createAsyncComponent(() => import('/@/layouts/default/feature/index.vue')),
-      // LayoutFooter: createAsyncComponent(() => import('/@/layouts/default/footer/index.vue')),
-      // LayoutHeader,
       LayoutContent, //主体main 子路由显示的connent
       LayoutSideBar, //左侧菜单栏
       LayoutMultipleHeader, //顶部和已打开tab栏

@@ -31,7 +31,7 @@ export function useRootSetting() {
 
   const getShowSettingButton = computed(() => appStore.getProjectConfig.showSettingButton);
 
-  const getUseErrorHandle = computed(() => appStore.getProjectConfig.useErrorHandle);
+  // const getUseErrorHandle = computed(() => appStore.getProjectConfig.useErrorHandle);
 
   const getShowBreadCrumb = computed(() => appStore.getProjectConfig.showBreadCrumb);
 
@@ -77,7 +77,7 @@ export function useRootSetting() {
     getCanEmbedIFramePage,
     getPermissionMode,
     getShowLogo,
-    getUseErrorHandle,
+    // getUseErrorHandle,
     getShowBreadCrumb,
     getShowBreadCrumbIcon,
     getUseOpenBackTop,

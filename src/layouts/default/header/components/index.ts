@@ -7,6 +7,6 @@ export const UserDropDown = createAsyncComponent(() => import('./user-dropdown/i
 
 export const LayoutBreadcrumb = createAsyncComponent(() => import('./Breadcrumb.vue'));
 
-export const ErrorAction = createAsyncComponent(() => import('./ErrorAction.vue'));
+// export const ErrorAction = createAsyncComponent(() => import('./ErrorAction.vue'));
 
 export { FullScreen };

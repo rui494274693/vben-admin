@@ -87,7 +87,7 @@ const setting: ProjectConfig = {
     collapsedShowTitle: false,
     // Whether it can be dragged
     // Only limited to the opening of the left menu, the mouse has a drag bar on the right side of the menu
-    canDrag: false,
+    // canDrag: false,
     // Whether to show no dom
     show: true,
     // Whether to show dom
@@ -95,19 +95,19 @@ const setting: ProjectConfig = {
     // Menu width
     menuWidth: 210,
     // Menu mode
-    mode: MenuModeEnum.INLINE,
+    // mode: MenuModeEnum.INLINE,
     // Menu type
     type: MenuTypeEnum.SIDEBAR,
     // Menu theme
     theme: ThemeEnum.DARK,
     // Split menu
-    split: false,
+    // split: false,
     // Top menu layout
-    topMenuAlign: 'center',
+    // topMenuAlign: 'center',
     // Fold trigger position
-    trigger: TriggerEnum.HEADER,
+    // trigger: TriggerEnum.HEADER,
     // Turn on accordion mode, only show a menu
-    accordion: true,
+    // accordion: true,
     // Switch page to close menu
     closeMixSidebarOnChange: false,
     // Module opening method ‘click’ |'hover'

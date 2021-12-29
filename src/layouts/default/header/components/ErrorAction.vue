@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <Tooltip
     :title="t('layout.header.tooltipErrorLog')"
     placement="bottom"
@@ -46,3 +46,4 @@
     },
   });
 </script>
+-->

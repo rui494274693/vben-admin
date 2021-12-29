@@ -1,11 +1,10 @@
 import { ContentEnum, RouterTransitionEnum } from '/@/enums/appEnum';
-import {
-  // MenuModeEnum,
-  // MenuTypeEnum,
-  // TopMenuAlignEnum,
-  TriggerEnum,
-  // MixSidebarTriggerEnum,
-} from '/@/enums/menuEnum';
+import // MenuModeEnum,
+// MenuTypeEnum,
+// TopMenuAlignEnum,
+// TriggerEnum,
+// MixSidebarTriggerEnum,
+'/@/enums/menuEnum';
 
 import { useI18n } from '/@/hooks/web/useI18n';
 
@@ -78,26 +77,26 @@ export const contentModeOptions = [
 //   },
 // ];
 //菜单折叠按钮
-export const getMenuTriggerOptions = (hideTop: boolean) => {
-  return [
-    // {
-    //   value: TriggerEnum.NONE,
-    //   label: t('layout.setting.menuTriggerNone'),
-    // },
-    // {
-    //   value: TriggerEnum.FOOTER,
-    //   label: t('layout.setting.menuTriggerBottom'),
-    // },
-    ...(hideTop
-      ? []
-      : [
-          {
-            value: TriggerEnum.HEADER,
-            label: t('layout.setting.menuTriggerTop'),
-          },
-        ]),
-  ];
-};
+// export const getMenuTriggerOptions = (hideTop: boolean) => {
+//   return [
+//     // {
+//     //   value: TriggerEnum.NONE,
+//     //   label: t('layout.setting.menuTriggerNone'),
+//     // },
+//     // {
+//     //   value: TriggerEnum.FOOTER,
+//     //   label: t('layout.setting.menuTriggerBottom'),
+//     // },
+//     ...(hideTop
+//       ? []
+//       : [
+//           {
+//             value: TriggerEnum.HEADER,
+//             label: t('layout.setting.menuTriggerTop'),
+//           },
+//         ]),
+//   ];
+// };
 //动画类型
 // export const routerTransitionOptions = [
 //   RouterTransitionEnum.ZOOM_FADE,

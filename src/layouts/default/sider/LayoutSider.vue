@@ -17,9 +17,8 @@
     :theme="getMenuTheme"
     @breakpoint="onBreakpointChange"
     :trigger="getTrigger"
-    v-bind="getTriggerAttr"
   >
-    <template #trigger v-if="getShowTrigger">
+    <template #trigger>
       <LayoutTrigger />
     </template>
     <LayoutMenu :theme="getMenuTheme" :menuMode="getMode" :splitType="getSplitType" />
@@ -64,7 +63,10 @@
 
       const { getIsMobile } = useAppInject();
 
-      const { getTriggerAttr, getShowTrigger } = useTrigger(getIsMobile);
+      // const {
+      // // getTriggerAttr, 
+      // // getShowTrigger
+      // } = useTrigger(getIsMobile);
 
       useDragLine(sideRef, dragBarRef);
 
@@ -116,7 +118,7 @@
         getHiddenDomStyle,
         getSiderClass,
         getTrigger,
-        getTriggerAttr,
+        // getTriggerAttr,
         getCollapsedWidth,
         getMenuFixed,
         showClassSideBarRef,
@@ -126,7 +128,7 @@
         onBreakpointChange,
         getMode,
         getSplitType,
-        getShowTrigger,
+        // getShowTrigger,
         toggleCollapsed,
       };
     },

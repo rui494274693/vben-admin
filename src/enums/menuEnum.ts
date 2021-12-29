@@ -13,14 +13,14 @@ export enum MenuTypeEnum {
 }
 
 // 折叠触发器位置
-export enum TriggerEnum {
-  // 不显示
-  // NONE = 'NONE',
-  // // 菜单底部
-  // FOOTER = 'FOOTER',
-  // 头部
-  HEADER = 'HEADER',
-}
+// export enum TriggerEnum {
+//   // 不显示
+//   // NONE = 'NONE',
+//   // // 菜单底部
+//   // FOOTER = 'FOOTER',
+//   // 头部
+//   HEADER = 'HEADER',
+// }
 
 export type Mode = 'vertical' | 'vertical-right' | 'horizontal' | 'inline';
 

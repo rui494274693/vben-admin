@@ -63,33 +63,33 @@ export function useMenuSetting() {
 
   const getCollapsedShowTitle = computed(() => appStore.getMenuSetting.collapsedShowTitle);
 
-  const getShowTopMenu = computed(() => {
-    return unref(getMenuMode) === MenuModeEnum.HORIZONTAL || unref(getSplit);
-  });
+  // const getShowTopMenu = computed(() => {
+  //   return unref(getMenuMode) === MenuModeEnum.HORIZONTAL || unref(getSplit);
+  // });
 
-  const getShowHeaderTrigger = computed(() => {
-    if (
-      unref(getMenuType) === MenuTypeEnum.TOP_MENU ||
-      !unref(getShowMenu) ||
-      unref(getMenuHidden)
-    ) {
-      return false;
-    }
+  // const getShowHeaderTrigger = computed(() => {
+  //   if (
+  //     unref(getMenuType) === MenuTypeEnum.TOP_MENU ||
+  //     !unref(getShowMenu) ||
+  //     unref(getMenuHidden)
+  //   ) {
+  //     return false;
+  //   }
 
-    return unref(getTrigger) === TriggerEnum.HEADER;
-  });
+  //   return unref(getTrigger) === TriggerEnum.HEADER;
+  // });
 
-  const getIsHorizontal = computed(() => {
-    return unref(getMenuMode) === MenuModeEnum.HORIZONTAL;
-  });
+  // const getIsHorizontal = computed(() => {
+  //   return unref(getMenuMode) === MenuModeEnum.HORIZONTAL;
+  // });
 
   const getIsMixSidebar = computed(() => {
     return unref(getMenuType) === MenuTypeEnum.MIX_SIDEBAR;
   });
 
-  const getIsMixMode = computed(() => {
-    return unref(getMenuMode) === MenuModeEnum.INLINE && unref(getMenuType) === MenuTypeEnum.MIX;
-  });
+  // const getIsMixMode = computed(() => {
+  //   return unref(getMenuMode) === MenuModeEnum.INLINE && unref(getMenuType) === MenuTypeEnum.MIX;
+  // });
 
   const getRealWidth = computed(() => {
     if (unref(getIsMixSidebar)) {
@@ -146,17 +146,17 @@ export function useMenuSetting() {
     getMenuTheme,
     // getCanDrag,
     getCollapsedShowTitle,
-    getIsHorizontal,
+    // getIsHorizontal,
     getIsSidebarType,
     // getAccordion,
-    getShowTopMenu,
-    getShowHeaderTrigger,
+    // getShowTopMenu,
+    // getShowHeaderTrigger,
     // getTopMenuAlign,
     getMenuHidden,
     getIsTopMenu,
     getMenuBgColor,
     getShowSidebar,
-    getIsMixMode,
+    // getIsMixMode,
     getIsMixSidebar,
     // getCloseMixSidebarOnChange,
     // getMixSideTrigger,
