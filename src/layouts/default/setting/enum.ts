@@ -1,4 +1,7 @@
-import { ContentEnum, RouterTransitionEnum } from '/@/enums/appEnum';
+import {
+  ContentEnum,
+  // RouterTransitionEnum
+} from '/@/enums/appEnum';
 import // MenuModeEnum,
 // MenuTypeEnum,
 // TopMenuAlignEnum,

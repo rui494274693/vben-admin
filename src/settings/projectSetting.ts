@@ -1,11 +1,16 @@
 import type { ProjectConfig } from '/#/config';
-import { MenuTypeEnum, MenuModeEnum, TriggerEnum, MixSidebarTriggerEnum } from '/@/enums/menuEnum';
+import {
+  MenuTypeEnum,
+  //  MenuModeEnum,
+  //   TriggerEnum,
+  // MixSidebarTriggerEnum,
+} from '/@/enums/menuEnum';
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 import {
   ContentEnum,
   PermissionModeEnum,
   ThemeEnum,
-  RouterTransitionEnum,
+  // RouterTransitionEnum,
   SettingButtonPositionEnum,
   SessionTimeoutProcessingEnum,
 } from '/@/enums/appEnum';
@@ -109,9 +114,9 @@ const setting: ProjectConfig = {
     // Turn on accordion mode, only show a menu
     // accordion: true,
     // Switch page to close menu
-    closeMixSidebarOnChange: false,
+    // closeMixSidebarOnChange: false,
     // Module opening method ‘click’ |'hover'
-    mixSideTrigger: MixSidebarTriggerEnum.CLICK,
+    // mixSideTrigger: MixSidebarTriggerEnum.CLICK,
     // Fixed expanded menu
     mixSideFixed: false,
   },
@@ -138,7 +143,7 @@ const setting: ProjectConfig = {
     enable: true,
 
     // Route basic switching animation
-    basicTransition: RouterTransitionEnum.FADE_SIDE,
+    // basicTransition: RouterTransitionEnum.FADE_SIDE,
 
     // Whether to open page switching loading
     // Only open when enable=true

@@ -5,7 +5,11 @@ import { computed, unref, ref } from 'vue';
 import { useAppStore } from '/@/store/modules/app';
 
 import { SIDE_BAR_MINI_WIDTH, SIDE_BAR_SHOW_TIT_MINI_WIDTH } from '/@/enums/appEnum';
-import { MenuModeEnum, MenuTypeEnum, TriggerEnum } from '/@/enums/menuEnum';
+import {
+  MenuModeEnum,
+  MenuTypeEnum,
+  // TriggerEnum
+} from '/@/enums/menuEnum';
 import { useFullContent } from '/@/hooks/web/useFullContent';
 
 const mixSideHasChildren = ref(false);
@@ -79,9 +83,9 @@ export function useMenuSetting() {
   //   return unref(getTrigger) === TriggerEnum.HEADER;
   // });
 
-  // const getIsHorizontal = computed(() => {
-  //   return unref(getMenuMode) === MenuModeEnum.HORIZONTAL;
-  // });
+  const getIsHorizontal = computed(() => {
+    return unref(getMenuMode) === MenuModeEnum.HORIZONTAL;
+  });
 
   const getIsMixSidebar = computed(() => {
     return unref(getMenuType) === MenuTypeEnum.MIX_SIDEBAR;
@@ -146,7 +150,7 @@ export function useMenuSetting() {
     getMenuTheme,
     // getCanDrag,
     getCollapsedShowTitle,
-    // getIsHorizontal,
+    getIsHorizontal,
     getIsSidebarType,
     // getAccordion,
     // getShowTopMenu,

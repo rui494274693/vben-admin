@@ -29,26 +29,26 @@ export function useSiderEvent() {
 /**
  * 处理菜单折叠的相关操作
  */
-export function useTrigger(getIsMobile: Ref<boolean>) {
-  // const { getTrigger, getSplit } = useMenuSetting();
-  // const getShowTrigger = computed(() => {
-  //   const trigger = unref(getTrigger);
-  //   return (
-  //     trigger !== TriggerEnum.NONE &&
-  //     !unref(getIsMobile) &&
-  //     (trigger === TriggerEnum.FOOTER || unref(getSplit))
-  //   );
-  // });
-  // const getTriggerAttr = computed(() => {
-  //   if (unref(getShowTrigger)) {
-  //     return {};
-  //   }
-  //   return {
-  //     trigger: null,
-  //   };
-  // });
-  // return { getTriggerAttr, getShowTrigger };
-}
+// export function useTrigger(getIsMobile: Ref<boolean>) {
+// const { getTrigger, getSplit } = useMenuSetting();
+// const getShowTrigger = computed(() => {
+//   const trigger = unref(getTrigger);
+//   return (
+//     trigger !== TriggerEnum.NONE &&
+//     !unref(getIsMobile) &&
+//     (trigger === TriggerEnum.FOOTER || unref(getSplit))
+//   );
+// });
+// const getTriggerAttr = computed(() => {
+//   if (unref(getShowTrigger)) {
+//     return {};
+//   }
+//   return {
+//     trigger: null,
+//   };
+// });
+// return { getTriggerAttr, getShowTrigger };
+// }
 
 /**
  * 处理菜单拖放相关操作
