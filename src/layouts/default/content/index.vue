@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefixCls, getLayoutContentMode]" v-loading="getPageLoading">
+  <div :class="[prefixCls, 'full']" v-loading="getPageLoading">
     <PageLayout />
   </div>
 </template>
@@ -15,12 +15,11 @@
     components: { PageLayout },
     setup() {
       const { prefixCls } = useDesign('layout-content');
-      const { getLayoutContentMode, getPageLoading } = useRootSetting();
+      const { getPageLoading } = useRootSetting();
 
       useContentViewHeight();
       return {
         prefixCls,
-        getLayoutContentMode,
         getPageLoading,
       };
     },

@@ -1,10 +1,4 @@
-import type {
-  ProjectConfig,
-  HeaderSetting,
-  MenuSetting,
-  // TransitionSetting,
-  MultiTabsSetting,
-} from '/#/config';
+import type { ProjectConfig, HeaderSetting, MenuSetting, MultiTabsSetting } from '/#/config';
 import type { BeforeMiniState } from '/#/store';
 
 import { defineStore } from 'pinia';
@@ -61,10 +55,6 @@ export const useAppStore = defineStore({
     getMenuSetting(): MenuSetting {
       return this.getProjectConfig.menuSetting;
     },
-    // 获取 动画配置
-    // getTransitionSetting(): TransitionSetting {
-    //   return this.getProjectConfig.transitionSetting;
-    // },
     // 获取 标签页配置
     getMultiTabsSetting(): MultiTabsSetting {
       return this.getProjectConfig.multiTabsSetting;

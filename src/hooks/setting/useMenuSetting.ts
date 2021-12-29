@@ -47,19 +47,7 @@ export function useMenuSetting() {
 
   const getMenuBgColor = computed(() => appStore.getMenuSetting.bgColor);
 
-  // const getMixSideTrigger = computed(() => appStore.getMenuSetting.mixSideTrigger);
-
-  // const getCanDrag = computed(() => appStore.getMenuSetting.canDrag);
-
-  // const getAccordion = computed(() => appStore.getMenuSetting.accordion);
-
   const getMixSideFixed = computed(() => appStore.getMenuSetting.mixSideFixed);
-
-  // const getTopMenuAlign = computed(() => appStore.getMenuSetting.topMenuAlign);
-
-  // const getCloseMixSidebarOnChange = computed(
-  //   () => appStore.getMenuSetting.closeMixSidebarOnChange,
-  // );
 
   const getIsSidebarType = computed(() => unref(getMenuType) === MenuTypeEnum.SIDEBAR);
 
@@ -67,34 +55,12 @@ export function useMenuSetting() {
 
   const getCollapsedShowTitle = computed(() => appStore.getMenuSetting.collapsedShowTitle);
 
-  // const getShowTopMenu = computed(() => {
-  //   return unref(getMenuMode) === MenuModeEnum.HORIZONTAL || unref(getSplit);
-  // });
-
-  // const getShowHeaderTrigger = computed(() => {
-  //   if (
-  //     unref(getMenuType) === MenuTypeEnum.TOP_MENU ||
-  //     !unref(getShowMenu) ||
-  //     unref(getMenuHidden)
-  //   ) {
-  //     return false;
-  //   }
-
-  //   return unref(getTrigger) === TriggerEnum.HEADER;
-  // });
-
   const getIsHorizontal = computed(() => {
     return unref(getMenuMode) === MenuModeEnum.HORIZONTAL;
   });
-
   const getIsMixSidebar = computed(() => {
     return unref(getMenuType) === MenuTypeEnum.MIX_SIDEBAR;
   });
-
-  // const getIsMixMode = computed(() => {
-  //   return unref(getMenuMode) === MenuModeEnum.INLINE && unref(getMenuType) === MenuTypeEnum.MIX;
-  // });
-
   const getRealWidth = computed(() => {
     if (unref(getIsMixSidebar)) {
       return unref(getCollapsed) && !unref(getMixSideFixed)
@@ -133,9 +99,7 @@ export function useMenuSetting() {
   }
   return {
     setMenuSetting,
-
     toggleCollapsed,
-
     getMenuFixed,
     getRealWidth,
     getMenuType,
@@ -148,22 +112,14 @@ export function useMenuSetting() {
     getTrigger,
     getSplit,
     getMenuTheme,
-    // getCanDrag,
     getCollapsedShowTitle,
     getIsHorizontal,
     getIsSidebarType,
-    // getAccordion,
-    // getShowTopMenu,
-    // getShowHeaderTrigger,
-    // getTopMenuAlign,
     getMenuHidden,
     getIsTopMenu,
     getMenuBgColor,
     getShowSidebar,
-    // getIsMixMode,
     getIsMixSidebar,
-    // getCloseMixSidebarOnChange,
-    // getMixSideTrigger,
     getMixSideFixed,
     mixSideHasChildren,
   };

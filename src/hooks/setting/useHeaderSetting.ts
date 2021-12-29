@@ -34,14 +34,8 @@ export function useHeaderSetting() {
     );
   });
 
-  const {
-    getMenuMode,
-    getSplit,
-    getShowHeaderTrigger,
-    getIsSidebarType,
-    getIsMixSidebar,
-    getIsTopMenu,
-  } = useMenuSetting();
+  const { getMenuMode, getSplit, getIsSidebarType, getIsMixSidebar, getIsTopMenu } =
+    useMenuSetting();
   const { getShowBreadCrumb, getShowLogo } = useRootSetting();
 
   const getShowMixHeaderRef = computed(() => !unref(getIsSidebarType) && unref(getShowHeader));
@@ -58,8 +52,6 @@ export function useHeaderSetting() {
 
   const getShowSearch = computed(() => appStore.getHeaderSetting.showSearch);
 
-  // const getUseLockPage = computed(() => appStore.getHeaderSetting.useLockPage);
-
   const getShowFullScreen = computed(() => appStore.getHeaderSetting.showFullScreen);
 
   const getShowNotice = computed(() => appStore.getHeaderSetting.showNotice);
@@ -75,7 +67,7 @@ export function useHeaderSetting() {
   });
 
   const getShowContent = computed(() => {
-    return unref(getShowBread) || unref(getShowHeaderTrigger);
+    return unref(getShowBread);
   });
 
   // Set header configuration
@@ -88,7 +80,6 @@ export function useHeaderSetting() {
     getShowDoc,
     getShowSearch,
     getHeaderTheme,
-    // getUseLockPage,
     getShowFullScreen,
     getShowNotice,
     getShowBread,
