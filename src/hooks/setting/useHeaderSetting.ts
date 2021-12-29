@@ -76,7 +76,6 @@ export function useHeaderSetting() {
   }
   return {
     setHeaderSetting,
-
     getShowDoc,
     getShowSearch,
     getHeaderTheme,

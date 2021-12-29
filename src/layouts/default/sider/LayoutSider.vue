@@ -9,7 +9,6 @@
     v-show="showClassSideBarRef"
     ref="sideRef"
     breakpoint="lg"
-    collapsible
     :class="getSiderClass"
     :width="getMenuWidth"
     :collapsed="getCollapsed"
