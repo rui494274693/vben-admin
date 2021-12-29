@@ -22,8 +22,6 @@
 
   import { useAppStore } from '/@/store/modules/app';
   import defaultSetting from '/@/settings/projectSetting';
-  import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
-  import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
   const loading = ref(true);
   const appStore = useAppStore();
   setTimeout(() => {
@@ -32,10 +30,6 @@
   function handleResetSetting(): void {
     try {
       appStore.setProjectConfig(defaultSetting);
-      const { colorWeak, grayMode } = defaultSetting;
-      // updateTheme(themeColor);
-      updateColorWeak(colorWeak);
-      updateGrayMode(grayMode);
       console.log('成功');
     } catch (error: any) {
       console.log(error);

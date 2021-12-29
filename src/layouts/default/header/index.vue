@@ -14,7 +14,6 @@
       <!-- AppSearch 搜索功能 可删 -->
       <AppSearch :class="`${prefixCls}-action__item `" v-if="getShowSearch" />
 
-      <!-- <ErrorAction v-if="getUseErrorHandle" :class="`${prefixCls}-action__item error-action`" /> -->
       <!--FullScreen 全屏-->
       <FullScreen v-if="getShowFullScreen" :class="`${prefixCls}-action__item fullscreen-item`" />
       <!-- AppLocalePicker 切换中英文 -->
@@ -48,12 +47,7 @@
   import { SettingButtonPositionEnum } from '/@/enums/appEnum';
   import { AppLocalePicker } from '/@/components/Application';
 
-  import {
-    UserDropDown,
-    LayoutBreadcrumb,
-    FullScreen,
-    // ErrorAction
-  } from './components';
+  import { UserDropDown, LayoutBreadcrumb, FullScreen } from './components';
   import { useAppInject } from '/@/hooks/web/useAppInject';
   import { useDesign } from '/@/hooks/web/useDesign';
 
@@ -70,7 +64,6 @@
       AppLocalePicker,
       FullScreen,
       AppSearch,
-      // ErrorAction,
       SettingDrawer: createAsyncComponent(() => import('/@/layouts/default/setting/index.vue'), {
         loading: true,
       }),
@@ -80,19 +73,7 @@
     },
     setup(props) {
       const { prefixCls } = useDesign('layout-header');
-      const {
-        // getShowTopMenu,
-        // getShowHeaderTrigger,
-        // getSplit,
-        // getIsMixMode,
-        // getMenuWidth,
-        // getIsMixSidebar,
-      } = useMenuSetting();
-      const {
-        // getUseErrorHandle,
-        getShowSettingButton,
-        getSettingButtonPosition,
-      } = useRootSetting();
+      const { getShowSettingButton, getSettingButtonPosition } = useRootSetting();
 
       const {
         getHeaderTheme,
@@ -133,44 +114,17 @@
         return settingButtonPosition === SettingButtonPositionEnum.HEADER;
       });
 
-      // const getLogoWidth = computed(() => {
-      //   if (!unref(getIsMixMode) || unref(getIsMobile)) {
-      //     return {};
-      //   }
-      //   const width = unref(getMenuWidth) < 180 ? 180 : unref(getMenuWidth);
-      //   return { width: `${width}px` };
-      // });
-
-      // const getSplitType = computed(() => {
-      //   return unref(getSplit) ? MenuSplitTyeEnum.TOP : MenuSplitTyeEnum.NONE;
-      // });
-
-      // const getMenuMode = computed(() => {
-      //   return unref(getSplit) ? MenuModeEnum.HORIZONTAL : null;
-      // });
-      onMounted(() => {
-        // console.log(getShowHeaderTrigger.value);
-        // console.log(getSplit.value);
-      });
       return {
         prefixCls,
         getHeaderClass,
         getShowHeaderLogo,
         getHeaderTheme,
-        // getShowHeaderTrigger,
         getIsMobile,
         getShowBread,
         getShowContent,
-        // getSplitType,
-        // getSplit,
-        // getMenuMode,
-        // getShowTopMenu,
         getShowLocalePicker,
         getShowFullScreen,
         getShowNotice,
-        // getUseErrorHandle,
-        // getLogoWidth,
-        // getIsMixSidebar,
         getShowSettingButton,
         getShowSetting,
         getShowSearch,

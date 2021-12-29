@@ -2,37 +2,20 @@ import { defineComponent, computed, unref } from 'vue';
 import { BasicDrawer } from '/@/components/Drawer/index';
 import { Divider } from 'ant-design-vue';
 import {
-  // TypePicker, //导航栏模式
   ThemeColorPicker,
   SettingFooter, //底部按钮
   SwitchItem,
-  // SelectItem,
   InputNumberItem,
 } from './components';
 import { AppDarkModeToggle } from '/@/components/Application';
-
-import // MenuTypeEnum,
-// TriggerEnum,
-'/@/enums/menuEnum';
 
 import { useRootSetting } from '/@/hooks/setting/useRootSetting';
 import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
 import { useHeaderSetting } from '/@/hooks/setting/useHeaderSetting';
 import { useMultipleTabSetting } from '/@/hooks/setting/useMultipleTabSetting';
-// import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
 import { useI18n } from '/@/hooks/web/useI18n';
 
-// import { baseHandler } from './handler';
-
-import {
-  HandlerEnum,
-  // contentModeOptions,
-  // topMenuAlignOptions,
-  // getMenuTriggerOptions,
-  // routerTransitionOptions,
-  // menuTypeList,
-  // mixSidebarTriggerOptions,
-} from './enum';
+import { HandlerEnum } from './enum';
 
 import {
   HEADER_PRESET_BG_COLOR_LIST,
@@ -46,43 +29,23 @@ export default defineComponent({
   name: 'SettingDrawer',
   setup(_, { attrs }) {
     const {
-      // getContentMode,
       getShowBreadCrumb,
       getShowBreadCrumbIcon,
       getShowLogo,
       getFullContent,
-      // getColorWeak,
-      // getGrayMode,
       getShowDarkModeToggle,
       getThemeColor,
     } = useRootSetting();
 
-    // const {
-    //   getOpenPageLoading,
-    //   getBasicTransition,
-    //   getEnableTransition,
-    //   getOpenNProgress
-    // } = useTransitionSetting();
-
     const {
       getIsHorizontal,
       getShowMenu,
-      // getMenuType,
-      // getTrigger,
       getCollapsedShowTitle,
       getMenuFixed,
       getCollapsed,
-      // getCanDrag,
-      // getTopMenuAlign,
-      // getAccordion,
       getMenuWidth,
       getMenuBgColor,
-      // getIsTopMenu,
-      // getSplit,
       getIsMixSidebar,
-      // getCloseMixSidebarOnChange,
-      // getMixSideTrigger,
-      // getMixSideFixed,
     } = useMenuSetting();
 
     const {
@@ -92,34 +55,12 @@ export default defineComponent({
       getShowSearch,
     } = useHeaderSetting();
 
-    const {
-      getShowMultipleTab,
-      // getShowQuick,
-      // getShowRedo,
-      // getShowFold
-    } = useMultipleTabSetting();
+    const { getShowMultipleTab } = useMultipleTabSetting();
 
     const getShowMenuRef = computed(() => {
       return unref(getShowMenu) && !unref(getIsHorizontal);
     });
-    //导航栏模式
-    // function renderSidebar() {
-    //   return (
-    //     <>
-    //       <TypePicker
-    //         menuTypeList={menuTypeList}
-    //         handler={(item: typeof menuTypeList[0]) => {
-    //           baseHandler(HandlerEnum.CHANGE_LAYOUT, {
-    //             mode: item.mode,
-    //             type: item.type,
-    //             split: unref(getIsHorizontal) ? false : undefined,
-    //           });
-    //         }}
-    //         def={unref(getMenuType)}
-    //       />
-    //     </>
-    //   );
-    // }
+
     //顶栏主题
     function renderHeaderTheme() {
       return (
@@ -155,13 +96,6 @@ export default defineComponent({
      * @description: 界面功能
      */
     function renderFeatures() {
-      // const triggerDef = unref(getTrigger);
-
-      // const triggerOptions = getMenuTriggerOptions(unref(getSplit));
-      // const some = triggerOptions.some((item) => item.value === triggerDef);
-      // if (!some) {
-      //   triggerDef = TriggerEnum.HEADER;
-      // }
       return (
         <>
           <SwitchItem
@@ -170,12 +104,7 @@ export default defineComponent({
             def={unref(getCollapsed)}
             disabled={!unref(getShowMenuRef)}
           />
-          {/* <SwitchItem
-            title={t('layout.setting.menuDrag')}
-            event={HandlerEnum.MENU_HAS_DRAG}
-            def={unref(getCanDrag)}
-            disabled={!unref(getShowMenuRef)}
-          /> */}
+
           <SwitchItem
             title={t('layout.setting.menuSearch')}
             event={HandlerEnum.HEADER_SEARCH}
@@ -202,38 +131,6 @@ export default defineComponent({
             def={unref(getMenuFixed)}
             disabled={!unref(getShowMenuRef) || unref(getIsMixSidebar)}
           />
-          {/* <SelectItem
-            title={t('layout.setting.mixSidebarTrigger')}
-            event={HandlerEnum.MENU_TRIGGER_MIX_SIDEBAR}
-            def={unref(getMixSideTrigger)}
-            options={mixSidebarTriggerOptions}
-            disabled={!unref(getIsMixSidebar)}
-          /> */}
-          {/* <SelectItem
-            title={t('layout.setting.topMenuLayout')}
-            event={HandlerEnum.MENU_TOP_ALIGN}
-            def={unref(getTopMenuAlign)}
-            options={topMenuAlignOptions}
-            disabled={
-              !unref(getShowHeader) ||
-              unref(getSplit) ||
-              (!unref(getIsTopMenu) && !unref(getSplit)) ||
-              unref(getIsMixSidebar)
-            }
-          /> */}
-          {/* <SelectItem
-            title={t('layout.setting.menuCollapseButton')}
-            event={HandlerEnum.MENU_TRIGGER}
-            def={triggerDef}
-            options={triggerOptions}
-            disabled={!unref(getShowMenuRef) || unref(getIsMixSidebar)}
-          /> */}
-          {/* <SelectItem
-            title={t('layout.setting.contentMode')}
-            event={HandlerEnum.CONTENT_MODE}
-            def={unref(getContentMode)}
-            options={contentModeOptions}
-          /> */}
           <InputNumberItem
             title={t('layout.setting.expandedMenuWidth')}
             max={600}
@@ -271,26 +168,6 @@ export default defineComponent({
             def={unref(getShowMultipleTab)}
           />
 
-          {/* <SwitchItem
-            title={t('layout.setting.tabsRedoBtn')}
-            event={HandlerEnum.TABS_SHOW_REDO}
-            def={unref(getShowRedo)}
-            disabled={!unref(getShowMultipleTab)}
-          /> */}
-
-          {/* <SwitchItem
-            title={t('layout.setting.tabsQuickBtn')}
-            event={HandlerEnum.TABS_SHOW_QUICK}
-            def={unref(getShowQuick)}
-            disabled={!unref(getShowMultipleTab)}
-          /> */}
-          {/* <SwitchItem
-            title={t('layout.setting.tabsFoldBtn')}
-            event={HandlerEnum.TABS_SHOW_FOLD}
-            def={unref(getShowFold)}
-            disabled={!unref(getShowMultipleTab)}
-          /> */}
-
           <SwitchItem
             title={t('layout.setting.sidebar')}
             event={HandlerEnum.MENU_SHOW_SIDEBAR}
@@ -308,53 +185,9 @@ export default defineComponent({
             event={HandlerEnum.FULL_CONTENT}
             def={unref(getFullContent)}
           />
-
-          {/* <SwitchItem
-            title={t('layout.setting.grayMode')}
-            event={HandlerEnum.GRAY_MODE}
-            def={unref(getGrayMode)}
-          />
-
-          <SwitchItem
-            title={t('layout.setting.colorWeak')}
-            event={HandlerEnum.COLOR_WEAK}
-            def={unref(getColorWeak)}
-          /> */}
         </>
       );
     }
-    //动画
-    // function renderTransition() {
-    //   return (
-    //     <>
-    //       <SwitchItem
-    //         title={t('layout.setting.progress')}
-    //         event={HandlerEnum.OPEN_PROGRESS}
-    //         def={unref(getOpenNProgress)}
-    //       />
-    //       <SwitchItem
-    //         title={t('layout.setting.switchLoading')}
-    //         event={HandlerEnum.OPEN_PAGE_LOADING}
-    //         def={unref(getOpenPageLoading)}
-    //       />
-
-    //       <SwitchItem
-    //         title={t('layout.setting.switchAnimation')}
-    //         event={HandlerEnum.OPEN_ROUTE_TRANSITION}
-    //         def={unref(getEnableTransition)}
-    //       />
-
-    //       <SelectItem
-    //         title={t('layout.setting.animationType')}
-    //         event={HandlerEnum.ROUTER_TRANSITION}
-    //         def={unref(getBasicTransition)}
-    //         options={routerTransitionOptions}
-    //         disabled={!unref(getEnableTransition)}
-    //       />
-    //     </>
-    //   );
-    // }
-
     return () => (
       <BasicDrawer
         {...attrs}
@@ -364,8 +197,6 @@ export default defineComponent({
       >
         {unref(getShowDarkModeToggle) && <Divider>{() => t('layout.setting.darkMode')}</Divider>}
         {unref(getShowDarkModeToggle) && <AppDarkModeToggle class="mx-auto" />}
-        {/* <Divider>{() => t('layout.setting.navMode')}</Divider>
-        {renderSidebar()} */}
         <Divider>{() => t('layout.setting.sysTheme')}</Divider>
         {renderMainTheme()}
         <Divider>{() => t('layout.setting.headerTheme')}</Divider>
@@ -376,8 +207,6 @@ export default defineComponent({
         {renderFeatures()}
         <Divider>{() => t('layout.setting.interfaceDisplay')}</Divider>
         {renderContent()}
-        {/* <Divider>{() => t('layout.setting.animation')}</Divider>
-        {renderTransition()} */}
         <Divider />
         <SettingFooter />
       </BasicDrawer>

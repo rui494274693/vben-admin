@@ -7,8 +7,8 @@ import { PROJ_CFG_KEY } from '/@/enums/cacheEnum';
 import projectSetting from '/@/settings/projectSetting';
 
 import { updateHeaderBgColor, updateSidebarBgColor } from '/@/logics/theme/updateBackground';
-import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
-import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
+// import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
+// import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
 import { updateDarkTheme } from '/@/logics/theme/dark';
 import { changeTheme } from '/@/logics/theme';
 
@@ -30,8 +30,8 @@ export function initAppConfigStore() {
   projCfg = deepMerge(projectSetting, projCfg || {});
   const darkMode = appStore.getDarkMode;
   const {
-    colorWeak,
-    grayMode,
+    // colorWeak,
+    // grayMode,
     themeColor,
 
     headerSetting: { bgColor: headerBgColor } = {},
@@ -42,8 +42,8 @@ export function initAppConfigStore() {
       changeTheme(themeColor);
     }
 
-    grayMode && updateGrayMode(grayMode);
-    colorWeak && updateColorWeak(colorWeak);
+    // grayMode && updateGrayMode(grayMode);
+    // colorWeak && updateColorWeak(colorWeak);
   } catch (error) {
     console.log(error);
   }

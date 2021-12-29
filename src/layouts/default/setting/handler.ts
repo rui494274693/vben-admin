@@ -1,7 +1,5 @@
 import { HandlerEnum } from './enum';
 import { updateHeaderBgColor, updateSidebarBgColor } from '/@/logics/theme/updateBackground';
-import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
-import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
 
 import { useAppStore } from '/@/store/modules/app';
 import { ProjectConfig } from '/#/config';
@@ -24,21 +22,6 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
 
   const { getThemeColor, getDarkMode } = useRootSetting();
   switch (event) {
-    // case HandlerEnum.CHANGE_LAYOUT:
-    //   const { mode, type, split } = value;
-    //   const splitOpt = split === undefined ? { split } : {};
-
-    //   return {
-    //     menuSetting: {
-    //       mode,
-    //       type,
-    //       collapsed: false,
-    //       show: true,
-    //       hidden: false,
-    //       ...splitOpt,
-    //     },
-    //   };
-
     //系统主题
     case HandlerEnum.CHANGE_THEME_COLOR:
       if (getThemeColor.value === value) {
@@ -55,13 +38,6 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
       updateDarkTheme(value);
 
       return {};
-    //菜单折叠按钮
-    // case HandlerEnum.MENU_TRIGGER:
-    //   return { menuSetting: { trigger: value } };
-
-    //顶部菜单布局
-    // case HandlerEnum.MENU_TOP_ALIGN:
-    //   return { menuSetting: { topMenuAlign: value } };
 
     //折叠菜单
     case HandlerEnum.MENU_COLLAPSED:
@@ -87,36 +63,10 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
     case HandlerEnum.MENU_FIXED:
       return { menuSetting: { fixed: value } };
 
-    //混合菜单触发方式
-    // case HandlerEnum.MENU_TRIGGER_MIX_SIDEBAR:
-    //   return { menuSetting: { mixSideTrigger: value } };
-
-    // ============动画==================
-    //切换loading
-    // case HandlerEnum.OPEN_PAGE_LOADING:
-    //   appStore.setPageLoading(false);
-    //   return { transitionSetting: { openPageLoading: value } };
-
-    //动画类型
-    // case HandlerEnum.ROUTER_TRANSITION:
-    //   return { transitionSetting: { basicTransition: value } };
-
-    //切换动画
-    // case HandlerEnum.OPEN_ROUTE_TRANSITION:
-    //   return { transitionSetting: { enable: value } };
-
-    // 顶部进度条
-    // case HandlerEnum.OPEN_PROGRESS:
-    //   return { transitionSetting: { openNProgress: value } };
-
     // ============root==================
     // 全屏
     case HandlerEnum.FULL_CONTENT:
       return { fullContent: value };
-
-    //内容区域宽度
-    // case HandlerEnum.CONTENT_MODE:
-    //   return { contentMode: value };
 
     // 显示面包屑
     case HandlerEnum.SHOW_BREADCRUMB:
@@ -126,36 +76,15 @@ export function handler(event: HandlerEnum, value: any): DeepPartial<ProjectConf
     case HandlerEnum.SHOW_BREADCRUMB_ICON:
       return { showBreadCrumbIcon: value };
 
-    // 灰色模式
-    case HandlerEnum.GRAY_MODE:
-      updateGrayMode(value);
-      return { grayMode: value };
-
-    // 色弱模式
-    case HandlerEnum.COLOR_WEAK:
-      updateColorWeak(value);
-      return { colorWeak: value };
     //显示 LOGO
     case HandlerEnum.SHOW_LOGO:
       return { showLogo: value };
 
     // ============标签页==================
-    //显示 标签页快捷按钮
-    // case HandlerEnum.TABS_SHOW_QUICK:
-    //   return { multiTabsSetting: { showQuick: value } };
 
     //显示 标签页
     case HandlerEnum.TABS_SHOW:
       return { multiTabsSetting: { show: value } };
-
-    //显示 标签页刷新按钮
-    // case HandlerEnum.TABS_SHOW_REDO:
-    //   return { multiTabsSetting: { showRedo: value } };
-
-    //显示 标签页折叠按钮
-    // case HandlerEnum.TABS_SHOW_FOLD:
-    //   return { multiTabsSetting: { showFold: value } };
-
     // ============头部==================
     //顶栏主题
     case HandlerEnum.HEADER_THEME:

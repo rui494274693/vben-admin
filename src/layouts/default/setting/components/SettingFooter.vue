@@ -24,10 +24,6 @@
   import { useDesign } from '/@/hooks/web/useDesign';
   import { useI18n } from '/@/hooks/web/useI18n';
   import { useMessage } from '/@/hooks/web/useMessage';
-  import { useCopyToClipboard } from '/@/hooks/web/useCopyToClipboard';
-
-  import { updateColorWeak } from '/@/logics/theme/updateColorWeak';
-  import { updateGrayMode } from '/@/logics/theme/updateGrayMode';
   import defaultSetting from '/@/settings/projectSetting';
 
   export default defineComponent({
@@ -45,10 +41,6 @@
       function handleResetSetting() {
         try {
           appStore.setProjectConfig(defaultSetting);
-          const { colorWeak, grayMode } = defaultSetting;
-          // updateTheme(themeColor);
-          updateColorWeak(colorWeak);
-          updateGrayMode(grayMode);
           createMessage.success(t('layout.setting.resetSuccess'));
         } catch (error: any) {
           createMessage.error(error);
